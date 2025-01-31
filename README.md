@@ -1,23 +1,6 @@
-# Infinite Yield 
-[![Discord](https://media.discordapp.net/attachments/338403017894395905/668536741942263808/Discord-Logo-Color.png)](https://discord.gg/78ZuWSq)
-The best command line script for roblox.
+# Infinite Yield VortexRelease
+This repository is not intended for public use. In case anyone sees it, it is just my fork of IY that contains scripts for different games.
 
-Get it [here](https://github.com/EdgeIY/infiniteyield/wiki)
-
- - Currently 378 commands
- - Open Source
- - 6 years of development
-
-## Developers
-### Creator: Edge
-
-### Developer: Moon
-### Developer: Zwolf
-### Developer: Toon
-
-
-## Usage
-You can learn how to use all the features of this script in the wiki!
-
-## Contributing
-There is no specific rules on contributing (as of now) just open a pull request and if it checks out we will merge it!
+# New commands
+Warning: This is only useful in VERY SPECIFIC games.
+ - explodeallcarts / xcarts (Only active in GameID 10660791703: "Cart ride around nothing"). USAGE: Get on the driver seat of ANY cart. then run.
