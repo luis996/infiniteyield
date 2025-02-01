@@ -4326,7 +4326,7 @@ CMDs[#CMDs + 1] = {NAME = 'discord / support / help', DESC = 'Invite to the Infi
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'oldconsole', DESC = 'Loads old Roblox console'}
 if game.PlaceId == 10660791703 then
-	CMDs[#CMDs + 1] = {NAME = 'explodeallcarts / xcarts', DESC = 'Explodes all carts if you're the driver of one.'}
+	CMDs[#CMDs + 1] = {NAME = 'explodeallcarts / xcarts', DESC = 'Explodes all carts if you are the driver of one.'}
 end
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX by Moon'}
 CMDs[#CMDs + 1] = {NAME = 'olddex / odex', DESC = 'Opens Old DEX by Moon'}
