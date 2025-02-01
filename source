@@ -17,7 +17,7 @@ if not game:IsLoaded() then
     notLoaded:Destroy()
 end
 
-currentVersion = "6.2"
+currentVersion = "6.2vx1"
 
 Holder = Instance.new("Frame")
 Title = Instance.new("TextLabel")
@@ -4325,6 +4325,9 @@ CMDs = {}
 CMDs[#CMDs + 1] = {NAME = 'discord / support / help', DESC = 'Invite to the Infinite Yield support server.'}
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'oldconsole', DESC = 'Loads old Roblox console'}
+if game.GameID == "10660791703" do
+	CMDs[#CMDs + 1] = {NAME = 'explodeallcarts / xcarts', DESC = 'Explodes all carts if you're the driver of one.'}
+end
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX by Moon'}
 CMDs[#CMDs + 1] = {NAME = 'olddex / odex', DESC = 'Opens Old DEX by Moon'}
 CMDs[#CMDs + 1] = {NAME = 'remotespy / rspy', DESC = 'Opens Simple Spy V3'}
@@ -6311,7 +6314,7 @@ local TeleportCheck = false
 Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if KeepInfYield and (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
-		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()")
+		queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/luis996/infiniteyield/master/source'))()")
 	end
 end)
 
@@ -10201,6 +10204,42 @@ addcmd('oldconsole',{},function(args, speaker)
 	notify('Console','Press F9 to open the console')
 end)
 
+if game.GameID == "10660791703" do
+addcmd('explodeallcarts', {'xcarts'}, function(args, speaker)
+	notify('Exploded', 'Exploded all carts possible.')
+	local cartsFolder = game.Workspace:FindFirstChild("Carts")
+	for index, cart in ipairs(cartsFolder:GetChildren()) do
+	    local success, err = pcall(function()
+	        local MainCar = cart:FindFirstChild("MainCar")
+	        if MainCar then
+	            local Walls = MainCar:FindFirstChild("Walls")
+	            if Walls then
+	                local wall = Walls:FindFirstChild("Wall")
+	                if wall then
+	                    -- FIRE TOUCH_TRANSMITTER
+	                    local plr = game.Players.LocalPlayer
+	                    local hrp = plr.Character and plr.Character:FindFirstChild("HumanoidRootPart")
+						if not hrp then return end
+						firetouchinterest(hrp, wall, 0)
+	                else
+	                    error("Wall not found in Walls for cart: " .. cart.Name)
+	                end
+	            else
+	                error("Walls not found in MainCar for cart: " .. cart.Name)
+	            end
+	        else
+	            error("MainCar not found in cart: " .. cart.Name)
+	        end
+	    end)
+	    
+	    if not success then
+	        warn("Error processing cart '" .. cart.Name .. "': " .. err)
+		        -- The loop will continue to the next cart even if an error occurs.
+	    end
+	end
+end)
+end
+
 addcmd('explorer', {'dex'}, function(args, speaker)
 	notify('Loading', 'Hold on a sec')
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
@@ -12760,7 +12799,7 @@ IYMouse.Move:Connect(checkTT)
 
 task.spawn(function()
 	local success, latestVersionInfo = pcall(function() 
-		local versionJson = game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/version')
+		local versionJson = game:HttpGet('https://raw.githubusercontent.com/luis996/infiniteyield/master/version')
 		return HttpService:JSONDecode(versionJson)
 	end)
 
