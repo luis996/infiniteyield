@@ -4325,7 +4325,7 @@ CMDs = {}
 CMDs[#CMDs + 1] = {NAME = 'discord / support / help', DESC = 'Invite to the Infinite Yield support server.'}
 CMDs[#CMDs + 1] = {NAME = 'console', DESC = 'Loads Roblox console'}
 CMDs[#CMDs + 1] = {NAME = 'oldconsole', DESC = 'Loads old Roblox console'}
-if game.GameID == "10660791703" then
+if game.PlaceId == 10660791703 then
 	CMDs[#CMDs + 1] = {NAME = 'explodeallcarts / xcarts', DESC = 'Explodes all carts if you're the driver of one.'}
 end
 CMDs[#CMDs + 1] = {NAME = 'explorer / dex', DESC = 'Opens DEX by Moon'}
@@ -10204,7 +10204,7 @@ addcmd('oldconsole',{},function(args, speaker)
 	notify('Console','Press F9 to open the console')
 end)
 
-if game.GameID == "10660791703" then
+if game.PlaceId == 10660791703 then
 addcmd('explodeallcarts', {'xcarts'}, function(args, speaker)
 	notify('Exploded', 'Exploded all carts possible.')
 	local cartsFolder = game.Workspace:FindFirstChild("Carts")
